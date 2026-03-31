@@ -3,70 +3,111 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Interview Lab — Results</title>
+    <meta name="description" content="View your test results and performance feedback" />
+    <title>Interview Lab — Your Results</title>
     <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128218;</text></svg>" />
   </head>
   <body>
     <header class="topbar">
       <a href="index.html" class="topbar__brand">Interview Lab</a>
-      <span class="topbar__meta">Results</span>
+      <span class="topbar__meta">Test Results</span>
     </header>
 
     <main class="main">
       <div class="wrap">
         <div class="card">
-          <h1>Test complete</h1>
-          <p class="sub">Here is how you did.</p>
+          <div class="card__lead">
+            <div class="card__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11.01"/>
+              </svg>
+            </div>
+            <div>
+              <h1>Assessment Complete</h1>
+              <p class="sub">Here is your performance summary and feedback.</p>
+            </div>
+          </div>
 
           <div class="score-wrap">
-            <p class="score-label">Score</p>
-            <p class="score-big" id="score-display">—</p>
+            <p class="score-label">Your Score</p>
+            <p class="score-big" id="score-display">--</p>
           </div>
 
           <div id="result-meta"></div>
           <p id="save-status" class="sub"></p>
 
-          <p class="block-title" id="feedback-label">Your feedback</p>
+          <p class="block-title" id="feedback-label">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 4px;">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Performance Feedback
+          </p>
           <div class="feedback-section" id="ai-feedback"></div>
           <p id="gemini-error-box" class="error-msg gemini-error-box" style="display: none"></p>
 
           <details class="feedback-section optional-gemini" id="gemini-details">
-            <summary>Optional — extra tips via Google Gemini (free API key)</summary>
+            <summary>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: middle; margin-right: 6px;">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+              </svg>
+              Optional: Enhanced AI Tips via Google Gemini
+            </summary>
             <p class="sub gemini-intro">
-              <strong>You can skip this.</strong> Feedback above is already complete. Gemini only rephrases tips — you need your own key from Google.
+              <strong>This is optional.</strong> The feedback above is already complete. Gemini provides additional personalized tips using your own API key.
             </p>
             <ol class="gemini-steps">
-              <li>Open <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a> while signed into Google.</li>
-              <li>Create an API key and copy the value (often starts with <code>AIza</code>).</li>
-              <li>Paste it below — it stays in this browser only.</li>
+              <li>Visit <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener noreferrer">Google AI Studio</a> while signed into your Google account.</li>
+              <li>Create an API key and copy the value (usually starts with <code>AIza</code>).</li>
+              <li>Paste it below — your key stays in this browser only.</li>
             </ol>
             <div id="gemini-key-panel">
-              <label for="gemini-key-input">API key</label>
+              <label for="gemini-key-input">Gemini API Key</label>
               <input
                 type="password"
                 id="gemini-key-input"
                 autocomplete="off"
                 spellcheck="false"
-                placeholder="Paste key here"
+                placeholder="Paste your API key here"
               />
               <div class="btn-row">
-                <button type="button" class="btn" id="gemini-key-save">Save key &amp; load Gemini tips</button>
+                <button type="button" class="btn" id="gemini-key-save">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                  Save Key &amp; Load Tips
+                </button>
                 <button type="button" class="btn btn-secondary" id="gemini-load-saved" hidden>
-                  Load Gemini again
+                  Reload Gemini Tips
                 </button>
               </div>
             </div>
           </details>
 
           <div class="nav-links">
-            <a class="btn" href="index.html">Take another test</a>
-            <a class="btn btn-secondary" href="dashboard.html">Teacher dashboard</a>
+            <a class="btn" href="index.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="1 4 1 10 7 10"/>
+                <path d="M3.51 15a9 9 0 1 0 2.13-9.36L1 10"/>
+              </svg>
+              Take Another Test
+            </a>
+            <a class="btn btn-secondary" href="dashboard.html">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="3" width="7" height="7"/>
+                <rect x="14" y="3" width="7" height="7"/>
+                <rect x="14" y="14" width="7" height="7"/>
+                <rect x="3" y="14" width="7" height="7"/>
+              </svg>
+              Teacher Dashboard
+            </a>
           </div>
         </div>
       </div>
     </main>
 
-    <footer class="site-footer" id="result-footer"></footer>
+    <footer class="site-footer" id="result-footer">Your results have been recorded.</footer>
 
     <script>
       window.GEMINI_API_KEY_OVERRIDE = "";
